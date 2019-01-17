@@ -10,6 +10,12 @@ This small script is produced by: SL5net ( https://github.com/sl5net/ahk-intelli
 Some links:
 Ctrl+Shift keys: https://www.jetbrains.com/help/phpstorm/ctrl-shift.html
 IntelliJ IDEA Key Bindings for Visual Studio Code: https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings
+https://www.autohotkey.com/boards/viewtopic.php?f=6&t=61102&p=258496#p258496
+https://intellij-support.jetbrains.com/hc/en-us/community/posts/206909795-Support-for-editing-AutoHotkey-ahk-files?flash_digest=69aad6d4b26aef8693c61b4284a9ca25b25d2d82
+https://www.autohotkey.com/boards/viewtopic.php?t=8267
+
+Tags: IntelliJ Keybinding keybindings ahk vsc Visual Studio Code
+Categories: Keyymaps
 )
 ToolTip9sec(welcomeMsg "`n(" Last_A_This A_ThisFunc " " RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")" )
 
