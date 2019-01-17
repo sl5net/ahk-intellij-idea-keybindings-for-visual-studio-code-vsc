@@ -5,6 +5,9 @@ welcomeMsg =
 Date: 17.01.2019 10:49
 planned to use together with: IntelliJ IDEA Keybindings produced by Keisuke Kato.
 it complements/adds a few Ctrl+Shift shortcuts for Visual Studio Code by using Windows OS.
+This small script is produced by: SL5net ( https://github.com/sl5net/ahk-intellij-idea-keybindings-for-visual-studio-code-vsc )
+
+Some links:
 Ctrl+Shift keys: https://www.jetbrains.com/help/phpstorm/ctrl-shift.html
 IntelliJ IDEA Key Bindings for Visual Studio Code: https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings
 )
@@ -24,10 +27,10 @@ vscTitle := "ahk_class Chrome_WidgetWin_1 ahk_exe Code.exe"
 ; intellij: ctrl+shift+a	shift+cmd+a	Find Action
 ; => Command Palette
 ^+a:: ; works 19-01-17_09-48
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip1sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
-    SetKeyDelay, 200, 20
-    ControlSend, ,+#p, % vscTitle ; 19-01-17_10-05: <== works with https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip1sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+SetKeyDelay, 200, 20
+ControlSend, ,+#p, % vscTitle ; 19-01-17_10-05: <== works with https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings
 return
 
 ; ahk_class Chrome_WidgetWin_1 ahk_exe Code.exe ahk_id 0x28109be
@@ -36,15 +39,15 @@ return
 ; keysEveryWhere.ahk - global-IntelliSense-everywhere-Nightly-Build - Visual Studio Code [Administrator] ahk_class Chrome_WidgetWin_1 ; mouseWindowTitle=0x211254  ; 
 ;#IfWinActive,
 ^+Backspace:: ; go to the last edit position.  works 19-01-17_09-48 ; works NOT 13.06.2018 08:13
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip1sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
-    SetKeyDelay, 200, 20
-    ControlSend, ,^z, % vscTitle
-    ControlSend, ,^+z, % vscTitle ; 19-01-17_10-05: <== works with https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip1sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+SetKeyDelay, 200, 20
+ControlSend, ,^z, % vscTitle
+ControlSend, ,^+z, % vscTitle ; 19-01-17_10-05: <== works with https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings
 return
 ^+esc:: ; works 13.06.2018Y 08:12
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
 
 
 ; ~^+right:: ; works 13.06.2018 08:12
@@ -58,38 +61,38 @@ return
 
 
 ~^+Enter:: ; works NOT 13.06.2018 08:13
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
 return
 ~^+Del:: ; works NOT 13.06.2018 08:13  
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
 return
 ~^+F12:: ;  works 13.06.2018 08:24
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
 return
 ~^+space:: ;   works 13.06.2018 08:24
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
 return
 ~^+Ins:: ; works 13.06.2018 08:24
-  Last_A_This:=A_ThisFunc . A_ThisLabel
-  ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
+Last_A_This:=A_ThisFunc . A_ThisLabel
+ToolTip3sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
 return
 ^+!Backspace:: ; works NOT 13.06.2018 08:13
 ;  ~ctrl & Backspace:: ; keyboard shortcut for go back to last edited position in Visual Studio Code
   ;ToolTip1sec("(" Last_A_This A_ThisFunc ":" RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")")
-  ToolTip2sec("^j === ^+BackScpace " A_LineNumber . " " . A_ScriptName . " " . Last_A_This)
-  msgbox % "works not"
-  Suspend,On
-  if(true){
-    send,^j ; works only if installed extension: for Ctrl + Shift + Backspace "Navigate Edits History" https://stackoverflow.com/questions/50608264/keyboard-shortcut-for-go-back-to-last-edited-position-in-visual-studio-code/50611031#50611031
-  }else{
-    send,{CtrlDown}z{ctrlup}
-    send,{CtrlDown}+z{ctrlup}
-  }
-  Suspend,Off
+ToolTip2sec("^j === ^+BackScpace " A_LineNumber . " " . A_ScriptName . " " . Last_A_This)
+msgbox % "works not"
+Suspend,On
+if(true){
+	send,^j ; works only if installed extension: for Ctrl + Shift + Backspace "Navigate Edits History" https://stackoverflow.com/questions/50608264/keyboard-shortcut-for-go-back-to-last-edited-position-in-visual-studio-code/50611031#50611031
+}else{
+	send,{CtrlDown}z{ctrlup}
+	send,{CtrlDown}+z{ctrlup}
+}
+Suspend,Off
   ;msgbox, huhu
 Return
 
@@ -97,7 +100,7 @@ Return
 ^+Backspace::msgbox % "works not"
 q::msgbox % "works"
 
- 
+
 
 
 
