@@ -13,6 +13,11 @@ IntelliJ IDEA Key Bindings for Visual Studio Code: https://marketplace.visualstu
 )
 ToolTip9sec(welcomeMsg "`n(" Last_A_This A_ThisFunc " " RegExReplace(A_LineFile,".*\\") ":"  A_LineNumber ")" )
 
+#notrayicon
+SetTimer,lblCheckTrayIconStatus,100 ; ; 30.08.2018 13:52 it sometimes happesn. and if it happens then its really ugly !!!! :( !!
+
+; please use this ! as first line in every script before all includes!
+isDevellopperMode:=true ;  update script.
 
 DetectHiddenWindows,on
 #InstallKeybdHook
@@ -100,6 +105,17 @@ Return
 ^+Backspace::msgbox % "works not"
 q::msgbox % "works"
 
+
+
+lblCheckTrayIconStatus:
+showTempTrayIf_isNearTrayMenue(iconAdress)		
+DetectHiddenWindows,Off
+IfWinExist,%A_ScriptName%_icon,ExitApp %A_ScriptName% ; message from child DynaRun() script
+{
+	WinClose,%A_ScriptName%_icon
+	ExitApp
+}
+return
 
 
 
